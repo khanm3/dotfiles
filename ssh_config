@@ -1,0 +1,11 @@
+# SSH multiplexing
+Host caen
+  HostName login.engin.umich.edu
+  User mohkha
+  ControlMaster auto
+  ControlPath ~/.ssh/_%r@%h:%p
+  ControlPersist 43200
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/master-%r@%h:%p
+
